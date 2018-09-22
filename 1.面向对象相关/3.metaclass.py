@@ -54,3 +54,21 @@ print(Foo4)
 """
 1、类由type创建，metaclass可以指定当前类由哪一个类创建;
 """
+
+
+
+
+class MyType1(type):
+    def __init__(self,*args,**kwargs):
+        print('创建类之前')
+        super(MyType1,self).__init__(*args,**kwargs)
+        print('创建类之后')
+
+
+class Foo1(object,metaclass=MyType1):
+    CITY = 'BJ'
+    def func(self,x):
+        return x +1
+
+class Bar(Foo):
+    pass
