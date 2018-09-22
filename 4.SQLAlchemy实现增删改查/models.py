@@ -3,7 +3,7 @@
 # Project: SQLALchemy 
 # Software: PyCharm
 # Time    : 2018-09-22 11:14
-# File    : 1.创建表操作.py
+# File    : models.py.bak
 # Author  : 天晴天朗
 # Email   : tqtl@tqtl.org
 from sqlalchemy.ext.declarative import declarative_base
@@ -40,8 +40,8 @@ class Hobby(Base):
 class Student2Hobby(Base):
     __tablename__ = 'student2hobby'
     id = Column(Integer, primary_key=True, autoincrement=True)
-    student_id = Column(Integer, ForeignKey('student_id'))
-    hobby_id = Column(Integer, ForeignKey('hobby_id'))
+    student_id = Column(Integer, ForeignKey('student.id'))
+    hobby_id = Column(Integer, ForeignKey('hobby.id'))
     # 创建联合唯一索引;
     UniqueConstraint('student_id', 'hobby_id', name='uix_student_id_hobby_id')
     # Index('ix_id_name','name','extra')
