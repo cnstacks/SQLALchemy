@@ -17,11 +17,17 @@ xxxx = sessionmaker(bind=engine)
 session = xxxx()
 
 
-# 增加
-obj = models.Classes(name = "全栈1期")
-session.add(obj)
+# 单条记录增加
+# obj = models.Classes(name = "全栈1期")
+# session.add(obj)
 
-
-
+# 多条记录增加；
+objs = [
+    models.Classes(name = '全栈2期'),
+    models.Classes(name = '全栈3期'),
+    models.Classes(name = '全栈4期'),
+    models.Classes(name = '全栈5期'),
+]
+session.add_all(objs)
 session.commit()
 session.close()
