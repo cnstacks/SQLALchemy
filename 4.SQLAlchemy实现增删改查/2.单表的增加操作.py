@@ -10,12 +10,9 @@ import models
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
-
-
 engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/flask_session?charset=utf8")
 xxxx = sessionmaker(bind=engine)
 session = xxxx()
-
 
 # 单条记录增加
 # obj = models.Classes(name = "全栈1期")
@@ -23,10 +20,10 @@ session = xxxx()
 
 # 多条记录增加；
 objs = [
-    #models.Classes(name = '全栈2期'),
-    models.Classes(name = '全栈3期'),
-    models.Classes(name = '全栈4期'),
-    models.Classes(name = '全栈5期'),
+    # models.Classes(name = '全栈2期'),
+    models.Classes(name='全栈3期'),
+    models.Classes(name='全栈4期'),
+    models.Classes(name='全栈5期'),
 ]
 session.add_all(objs)
 session.commit()

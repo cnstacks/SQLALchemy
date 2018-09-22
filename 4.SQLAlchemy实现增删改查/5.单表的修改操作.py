@@ -18,5 +18,6 @@ session = maker()
 # 更新操作；˚
 session.query(models.Classes).filter(models.Classes.id > 0).update({models.Classes.name: models.Classes.name + "999"},
                                                                    synchronize_session=False)
+# 尾部的参数决定了是进行字符串操作还是数学运算操作；
 session.commit()
 session.close()

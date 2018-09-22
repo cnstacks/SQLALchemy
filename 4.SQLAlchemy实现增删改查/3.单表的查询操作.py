@@ -17,8 +17,8 @@ session = maker()
 # 查询;
 
 result = session.query(models.Classes).all()
-#print(result)#[<models.Classes object at 0x10dcb2358>, <models.Classes object at 0x10dcb23c8>, <models.Classes object at 0x10dcb2438>, <models.Classes object at 0x10dcb24a8>, <models.Classes object at 0x10dcb2518>]
+# print(result)#[<models.Classes object at 0x10dcb2358>, <models.Classes object at 0x10dcb23c8>, <models.Classes object at 0x10dcb2438>, <models.Classes object at 0x10dcb24a8>, <models.Classes object at 0x10dcb2518>]
 for item in result:
-    print(item.id,item.name)
+    print(item.id, item.name)
 session.commit()
 session.close()
