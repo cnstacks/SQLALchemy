@@ -31,10 +31,28 @@ class Users(Base):
     #     Index('ix_id_name', 'name', 'extra')
     # )
 
+
 # 数据库连接相关；
 # engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com/flask_session?charset=utf8")
 # Base.metadata.create_all(engine)
 # 删除表;
-#Base.metadata.drop_all(engine)
+# Base.metadata.drop_all(engine)
 
 # 向表中插入数据；
+def init_db():
+    # 数据库连接相关；    
+    engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/flask_session?charset=utf8")
+    # 创建表；
+    Base.metadata.create_all(engine)
+
+
+def drop_db():
+    # 数据库连接相关；
+    engine = create_engine("mysql+pymysql://root:Tqtl911!@%*)@mysql.cuixiaozhao.com:3306/flask_session?charset=utf8")
+    # 删除表;
+    Base.metadata.drop_all(engine)
+
+
+if __name__ == '__main__':
+    init_db()
+    # drop_db()
