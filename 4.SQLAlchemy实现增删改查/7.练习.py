@@ -47,3 +47,4 @@ student_list = obj3.stus
 for i in student_list:
     print(i.id,i.username)
 print("全栈2期所有的学生",student_list)
+
