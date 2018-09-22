@@ -3,7 +3,7 @@
 # Project: SQLALchemy 
 # Software: PyCharm
 # Time    : 2018-09-22 15:14
-# File    : 2.单表的增删改查.py
+# File    : 2.单表的增加操作.py
 # Author  : 天晴天朗
 # Email   : tqtl@tqtl.org
 import models
@@ -23,7 +23,7 @@ session = xxxx()
 
 # 多条记录增加；
 objs = [
-    models.Classes(name = '全栈2期'),
+    #models.Classes(name = '全栈2期'),
     models.Classes(name = '全栈3期'),
     models.Classes(name = '全栈4期'),
     models.Classes(name = '全栈5期'),
