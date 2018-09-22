@@ -9,6 +9,7 @@
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy import Column, Integer, String, UniqueConstraint, Index, DateTime, ForeignKey
 from sqlalchemy import create_engine
+from sqlalchemy.orm import relationship
 import datetime
 
 Base = declarative_base()
@@ -28,6 +29,8 @@ class Student(Base):
     password = Column(String(64), nullable=False)
     ctime = Column(DateTime, default=datetime.datetime.now)  # 不能这么写datatime.datetime.now，
     class_id = Column(Integer, ForeignKey('classes.id'))
+    # 该字段只做关联查询使用；
+    cls = relationship("Classes", backref="stus")
 
 
 class Hobby(Base):
